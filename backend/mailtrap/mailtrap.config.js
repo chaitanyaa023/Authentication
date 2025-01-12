@@ -1,11 +1,11 @@
 import { MailtrapClient } from "mailtrap";
-import  dotenv  from "dotenv";
+import dotenv from "dotenv";
 
 dotenv.config();
 
-const TOKEN = process.env.MAILTRAP_ENDPOINT
-const ENDPOINT= process.env.MAILTRAP_ENDPOINT
-const client = new MailtrapClient({ endpoint: ENDPOINT,
+const TOKEN = process.env.MAILTRAP_TOKEN;
+
+const client = new MailtrapClient({
   token: TOKEN,
 });
 
@@ -24,7 +24,7 @@ client
     from: sender,
     to: recipients,
     subject: "You are awesome!",
-    text: "Congrats for sending test email with Mailtrap!",
+    html: "Congrats for sending test email with Mailtrap!",
     category: "Integration Test",
   })
   .then(console.log, console.error);
