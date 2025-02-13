@@ -19,4 +19,4 @@ export const sendVerificationEmail = async (email,verificationToken) => {
     }
 };
 
-export const sendWelcomeEmail = async(email,name) => {c}
+export const sendWelcomeEmail = async(email,name) => {}
